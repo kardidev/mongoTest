@@ -37,6 +37,13 @@
       <artifactId>spring-webmvc</artifactId>
       <version>${spring-version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongodb-driver</artifactId>
+      <version>3.0.0-beta3</version>
+    </dependency>
+
   </dependencies>
 
 

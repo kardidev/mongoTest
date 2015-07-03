@@ -45,6 +45,15 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:4.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:4.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver:3.0.0-beta3" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-core:3.0.0-beta3" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.6" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:bson:3.0.0-beta3" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.0.24.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-common:4.0.24.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-handler:4.0.24.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-transport:4.0.24.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec:4.0.24.Final" level="project" />
   </component>
 </module>
 
