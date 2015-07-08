@@ -35,7 +35,7 @@
       event.preventDefault();
 
       $.ajax({
-        url: "insert",
+        url: "mongo/insert",
         type: 'POST',
         dataType: 'json',
         headers: {
@@ -67,7 +67,7 @@
     LoadAllPersons();
     function LoadAllPersons() {
       $.ajax({
-        url: "getall",
+        url: "mongo/getall",
         type: 'GET',
         headers: {
           'Accept': 'application/json'

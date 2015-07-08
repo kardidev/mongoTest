@@ -1,8 +1,6 @@
 package com.kardi.test.mongo.configuration;
 
-import com.kardi.test.mongo.security.UserRole;
 import com.kardi.test.mongo.services.UserDetailsServiceImpl;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.encoding.ShaPasswordEncoder;
@@ -12,9 +10,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-/**
- * Created by m.lysenchuk on 7/8/15.
- */
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
@@ -36,32 +31,31 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        // turning on the CSRF protection
-        http.csrf()
-                .disable()
-                .authorizeRequests()
-                .antMatchers("/resources/**", "/**").permitAll()
-                .anyRequest().permitAll()
-                .and()
 
-        .authorizeRequests()
-                .antMatchers("/").permitAll()
-                .antMatchers("/index").hasRole(UserRole.USER.name())
-                .anyRequest().authenticated()
-                .and()
+        http
+            .csrf()
+                .disable() // turning on the CSRF protection
 
-        .formLogin()
+            .formLogin()
                 .loginPage("/login")
                 .loginProcessingUrl("/j_spring_security_check")
                 .failureUrl("/login?error")
                 .usernameParameter("j_username")
                 .passwordParameter("j_password")
-                .permitAll();
-
-        http.logout()
                 .permitAll()
+                .and()
+
+            .logout()
                 .logoutUrl("/logout")
                 .logoutSuccessUrl("/")
-                .invalidateHttpSession(true);
+                .invalidateHttpSession(true)
+                .permitAll()
+                .and()
+
+            .authorizeRequests()
+                .antMatchers("/resources/**").permitAll()
+                .antMatchers("/").permitAll()
+                .antMatchers("/mongo/**").hasAnyAuthority("USER", "ADMIN")
+                .anyRequest().authenticated();
     }
 }
