@@ -25,6 +25,9 @@
         <module name="mongoTest" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mongoTest" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 

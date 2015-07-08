@@ -4,9 +4,6 @@ import java.util.List;
 
 import org.bson.Document;
 
-/**
- * Created by m.lysenchuk on 7/6/15.
- */
 public interface MainService {
 
     void create(Document document) throws Exception;
@@ -14,5 +11,7 @@ public interface MainService {
     Document getById();
 
     List<Document> getAll() throws Exception;
+
+    List<String> getAllNames() throws Exception;
 
 }
